@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'policy_dashboard',
 ]
 
 MIDDLEWARE = [
@@ -121,3 +122,14 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Automated email generator 
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  # Use SMTP as the email backend
+EMAIL_HOST = 'your_smtp_host'
+EMAIL_PORT = 587  # Replace with the correct port for your SMTP provider
+EMAIL_USE_TLS = True  # Use TLS for secure connection
+EMAIL_HOST_USER = 'your_smtp_username'
+EMAIL_HOST_PASSWORD = 'your_smtp_password'
+DEFAULT_FROM_EMAIL = 'your_default_from_email'
